@@ -3,29 +3,68 @@
 <head>
     <script>
     !function(){var analytics=window.analytics=window.analytics||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware"];analytics.factory=function(e){return function(){var t=Array.prototype.slice.call(arguments);t.unshift(e);analytics.push(t);return analytics}};for(var e=0;e<analytics.methods.length;e++){var key=analytics.methods[e];analytics[key]=analytics.factory(key)}analytics.load=function(key,e){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var n=document.getElementsByTagName("script")[0];n.parentNode.insertBefore(t,n);analytics._loadOptions=e};analytics._writeKey="1ehB3OVKOIY7L4lVQeT2hEIJhCedn0xE";analytics.SNIPPET_VERSION="4.13.2";
-    analytics.load("1ehB3OVKOIY7L4lVQeT2hEIJhCedn0xE");
+    // analytics.load("1ehB3OVKOIY7L4lVQeT2hEIJhCedn0xE");
+    analytics.load("1ehB3OVKOIY7L4lVQeT2hEIJhCedn0xE", {
+    integrations: {
+      "Segment.io": {
+        deliveryStrategy: {
+          strategy: "batching",
+          config: {
+            size: 5,
+            timeout: 10000
+          }
+        }
+      }
+    }
+  });
     analytics.page("Home", {
         "category": "home page"
+        }, () => {
+          console.log("page call complete");
         });
     }}();
-    analytics.track("Visit", {
-      "title": "Hello Dylan"
+    analytics.ready(function() {
+      console.log("analytics is ready");
     });
     </script>
-    <script src="index.js"></script>
   <title>evo | dfox</title>
 </head>
 
 <body>
+<script src="index.js"></script>
+
 
 <h2>dfox-sandbox</h2>
 <hr>
 <h4>// segment-training</h4>
-<button>identify</button>
-<br><br><button>track</button>
-<br><br><button>page</button>
-<br><br><button>group</button>
-<br><br><button>alias</button>
+<button onclick='identify();'>identify</button>
+<pre style="margin-left: 40px">analytics.identify('12345', {
+  name: 'dylan fox',
+  email: 'email@test.com'
+}, () => {
+  console.log("identify call complete");
+});</pre>
+<button onclick='track();'>track</button>
+<pre style="margin-left: 40px">analytics.track("visit", {
+  "title": "Hello Dylan"
+}, () => {
+  console.log("track call complete");
+});</pre>
+<!-- <br><br><a href="https://evolytics.com/" target="_blank" id='track-link'>www.evolytics.com</a> -->
+<button onclick='page();'>page</button>
+<pre style="margin-left: 40px">analytics.page("home", {
+  "category": "home page"
+}, () => {
+  console.log("page call complete");
+});</pre>
+<button onclick='group();'>group</button>
+<pre style="margin-left: 40px">analytics.group('evo', () => {
+  console.log('group call complete');
+});</pre>
+<button onclick='alias();'>alias</button>
+<pre style="margin-left: 40px">analytics.alias('67890', '12345', () => {
+  console.log('alias call complete');
+});</pre>
 
 </body>
 
