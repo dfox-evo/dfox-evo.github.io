@@ -20,56 +20,52 @@
       console.log("analytics is ready");
     });
     </script>
-  <title>evo | dfox</title>
+  <title>dfox | evo</title>
 </head>
 
 <body>
-<script src="index.js"></script>
-
 
 <h2>dfox-sandbox</h2>
 <hr>
 <h4>// segment-training</h4>
+
 <button onclick='identify();'>identify</button>
-<pre style="margin-left: 40px">analytics.identify('12345', {
+<pre>analytics.identify('12345', {
   name: 'dylan fox',
   email: 'email@test.com'
 }, () => {
   console.log("identify call complete");
 });</pre>
+
 <button onclick='track();'>track</button>
-<pre style="margin-left: 40px">analytics.track("visit", {
+<pre>analytics.track("visit", {
   "title": "Hello Dylan"
 }, () => {
   console.log("track call complete");
 });</pre>
-<!-- <br><br><a href="https://evolytics.com/" target="_blank" id='track-link'>www.evolytics.com</a> -->
+
 <button onclick='page();'>page</button>
-<pre style="margin-left: 40px">analytics.page("home", {
+<pre>analytics.page("home", {
   "category": "home page"
 }, () => {
   console.log("page call complete");
 });</pre>
+
 <button onclick='group();'>group</button>
-<pre style="margin-left: 40px">analytics.group('evo', () => {
+<pre>analytics.group('evo', () => {
   console.log('group call complete');
 });</pre>
+
 <button onclick='alias();'>alias</button>
-<pre style="margin-left: 40px">analytics.alias('67890', '12345', () => {
+<pre>analytics.alias('67890', '12345', () => {
   console.log('alias call complete');
 });</pre>
 
 <h4>// adobe-training</h4>
 
-
+<script src="index/index.js"></script>
 </body>
 
 <footer>
-  <script>
-    // analytics.identify('f4ca124298', {
-    //   name: 'Michael Brown',
-    //   email: 'mbrown@example.com'
-    // });
-  </script>
 </footer>
 </html>
