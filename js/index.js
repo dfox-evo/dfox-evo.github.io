@@ -15,12 +15,6 @@ function track() {
     });
 }
 
-// var link = document.getElementById('track-link');
-
-// analytics.trackLink(link, 'click evo link', () => {
-//     console.log('track link call complete');
-// });
-
 function page() {
     analytics.page("home", {
         "category": "home page"
