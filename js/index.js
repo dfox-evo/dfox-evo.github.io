@@ -8,8 +8,8 @@ function identify() {
 }
 
 function track() {
-    analytics.track("visit", {
-        "title": "Hello Dylan"
+    analytics.track("click", {
+        "title": "track click"
     }, () => {
         console.log("track call complete");
     });

@@ -24,56 +24,56 @@
 </head>
 
 <body>
+  <script src="index/index.js"></script>
 
-<h2>dfox-sandbox</h2>
-<hr>
-<h4>// segment-training</h4>
+  <h2>dfox-sandbox</h2>
+  <hr>
+  <h4>// segment-training</h4>
 
-<button onclick='identify();'>identify</button>
-<pre>
-  analytics.identify('12345', {
-    name: 'dylan fox',
-    email: 'email@test.com'
-  }, () => {
-    console.log("identify call complete");
-  });
-</pre>
+  <button onclick='identify();'>identify</button>
+  <pre>
+    analytics.identify('12345', {
+      name: 'dylan fox',
+      email: 'email@test.com'
+    }, () => {
+      console.log("identify call complete");
+    });
+  </pre>
 
-<button onclick='track();'>track</button>
-<pre>
-  analytics.track("visit", {
-    "title": "Hello Dylan"
-  }, () => {
-    console.log("track call complete");
-  });
-</pre>
+  <button onclick='track();'>track</button>
+  <pre>
+    analytics.track("visit", {
+      "title": "Hello Dylan"
+    }, () => {
+      console.log("track call complete");
+    });
+  </pre>
 
-<button onclick='page();'>page</button>
-<pre>
-  analytics.page("home", {
-    "category": "home page"
-  }, () => {
-    console.log("page call complete");
-  });
-</pre>
+  <button onclick='page();'>page</button>
+  <pre>
+    analytics.page("home", {
+      "category": "home page"
+    }, () => {
+      console.log("page call complete");
+    });
+  </pre>
 
-<button onclick='group();'>group</button>
-<pre>
-  analytics.group('evo', () => {
-    console.log('group call complete');
-  });
-</pre>
+  <button onclick='group();'>group</button>
+  <pre>
+    analytics.group('evo', () => {
+      console.log('group call complete');
+    });
+  </pre>
 
-<button onclick='alias();'>alias</button>
-<pre>
-  analytics.alias('67890', '12345', () => {
-    console.log('alias call complete');
-  });
-</pre>
+  <button onclick='alias();'>alias</button>
+  <pre>
+    analytics.alias('67890', '12345', () => {
+      console.log('alias call complete');
+    });
+  </pre>
 
-<h4>// adobe-training</h4>
+  <h4>// adobe-training</h4>
 
-<script src="index/index.js"></script>
 </body>
 
 <footer>
