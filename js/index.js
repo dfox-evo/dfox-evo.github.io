@@ -35,7 +35,7 @@ function alias() {
   });
 }
 
-const prompt = () => {
+const customPrompt = () => {
   var text;
-  var input = prompt("Please enter the Launch URL:", "https://assets.adobedtm.com/...");
+  var input = prompt("Please enter the Launch URL.", "https://assets.adobedtm.com/...");
 }
